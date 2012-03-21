@@ -1,0 +1,71 @@
+Training To- DO
+3/18 - Creating New program should automatically updated corresponding associated models
+3/15 - Seed Database with Programs
+3/21 - Build Facets Capability for Programs
+3/23 - Build Review Capability
+3/26 - Create User Accounts
+3/28 - Build User Review Capability
+- 3/30 Build User Saving Program ability
+
+Overall Components of the SIte
+	Organization and Program Relationship
+		- Linking Progs to Orgs 
+		- Allowing Reviews on a Prog to Push directly to an Org
+		- Create Find a Program pages
+			a) Search Engine
+			b) Location 
+			c) Program Type 
+	Organizations and Program Profile Pages
+		- Displaying information
+How do users Interact
+	Programs 
+		1. Search for programs 
+		2. See all the programs listed for an organization
+		3. View individual programs profiles
+		4. Review Organizations through Programs
+		5. Save programs to User Profiles
+		6. CRUD Operations
+	Organization
+		1. Serach for organization
+		2. View Organization profiles
+		3. Review Organizations through Programs
+		4. CRUD Operations
+	User Profiles
+		1. View User Profiels
+		2. Save Programs to Profile
+		3. Review Programs from Profile
+		4. CRUD Operations
+Major Pages of the Site
+	Home Page
+	   # Of Organizations
+	   # Voices
+		3 Recent Reviews  (How do we make the stars display)  (link_to)
+		3 Organizations   (link_to)
+		? - Questions:
+			1. How to pull recently created reviews
+			2. How to decide which organizations to post
+			3. Will this page be slow
+	Search/Facet Landing Page
+		Display five Filters and number of hits per filter
+		Allow for submitting search results based on filters
+		Retain filter results from page to page
+		? - Questions
+			1. How to list facet counts
+			2. How to retain applied facets between requests
+			3. HOw to add sorting and pagination
+	Organization Profile Page
+		Organization Ranking
+		Organization Details
+		? - Questions
+			1. How to pull information from program model
+	Organization/Program Page
+		Listing of Organizations for a particular organization	
+	User Profile Page
+		Allow for Pics
+		Display User information
+		Pull all reviews made by that user
+		Display saved Programs
+		? - Questions
+			How to assign 	
+
+

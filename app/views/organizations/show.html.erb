@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @organization.description %>
+</p>
+
+<p>
+  <b>Programs:</b>
+  <%= @organization.program_id %>
+</p>
+
+
+
+<h2>Comments</h2>
+<% @organization.comments.each do |comment| %>
+    <p>
+      <b>Commenter:</b>
+      <%= comment.commenter %>
+    </p>
+
+    <p>
+      <b>Comment:</b>
+      <%= comment.body %>
+    </p>
+<% end %>
+
+
+
+<h2>Add a comment:</h2>
+<%= form_for([@organization, @organization.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.label :commenter %><br />
+      <%= f.text_field :commenter %>
+    </div>
+    <div class="field">
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

@@ -1,0 +1,13 @@
+rails generate scaffold Programs name:string description:text weekly_cost:integer location:strng organization:references
+rake db:migrate
+Add route
+
+rails  generate migration AddProgram_IDToOrganizations program_id:integer
+
+
+I need to understand this:
+
+resources :posts do
+  resources :comments
+end
+http://guides.rubyonrails.org/routing.html

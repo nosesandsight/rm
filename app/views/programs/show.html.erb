@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @program.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @program.description %>
+</p>
+
+<p>
+  <b>Weekly cost:</b>
+  <%= @program.weekly_cost %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @program.location %>
+</p>
+
+<p>
+  <b>Organization:</b>
+    <td><%= Org_Namer(@program.organization_id) %></td>
+</p>
+
+<h2>Submit a Review:</h2>
+<%= form_for([@program, @program.reviews.build]) do |f| %>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.number_field :rating %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ 
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

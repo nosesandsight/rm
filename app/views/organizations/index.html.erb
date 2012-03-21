@@ -1,0 +1,38 @@
+<h1>Listing organizations</h1>
+
+
+
+<%= form_tag organizations_path, :method => 'get' do %>  
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+<% end %> 
+
+<table>
+  <tr>
+	<th>ID</th>
+     <th>Name</th>
+    <th>Description</th>
+	<th>Programs</th>
+     <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @organizations.each do |organization| %>
+  <tr>
+   <td><%= organization.id %></td>
+  	<td><%= organization.name %></td>
+    <td><%= organization.description %></td>
+    <td><%= organization.programs %></td>
+        <td><%= link_to 'Show', organization %></td>
+    <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
+    <td><%= link_to 'Destroy', organization, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Organization', new_organization_path %>
