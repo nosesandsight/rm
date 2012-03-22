@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def program_listing
   	@programs = Program.all
   	
-  	end
+  end
   	
   
 end

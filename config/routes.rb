@@ -1,8 +1,9 @@
 RMTest::Application.routes.draw do
-
+  
   devise_for :users
   
   resources :users
+  
 
   resources :programs do
   	resources :reviews
