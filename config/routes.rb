@@ -1,8 +1,17 @@
 RMTest::Application.routes.draw do
+
   
+  match "users/send_message.:id" => 'users#send_message'
+
+
+  resources :messages
+
+
   devise_for :users
   
-  resources :users
+  resources :users do
+    post :send_message, :on => :collection
+  end
   
 
   resources :programs do
