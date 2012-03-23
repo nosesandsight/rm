@@ -1,9 +1,14 @@
 RMTest::Application.routes.draw do
+  
+  match "users/send_message/:id" => 'users#send_message'
+  
+  match "users/send_message.:id" => 'users#send_message'
+  
+  match "users/message/:id/edit" => 'messages#edit'
+   
   match 'users.:id' => 'users#show'
   
   match 'reviews/new.:id' => 'reviews#new'
-  
-  match "users/send_message.:id" => 'users#send_message'
   
   match "programs/create_review.:id" => 'programs#create_review'
 
@@ -13,7 +18,7 @@ RMTest::Application.routes.draw do
 
   devise_for :users
   
-  resources :users do
+  resources :users do 
     post :send_message, :on => :collection
   end
   
