@@ -1,8 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<% if @program.photo.exists? then %>
+<p><%= image_tag @event.photo.url(:medium) %></p>
+<% else %>
+<p> There are no photos attached, upload one. </p>
+<% end %>
+
 <p>
   <b>Name:</b>
   <%= @program.name %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= image_tag @user.photo.url %>
 </p>
 
 <p>
@@ -26,20 +37,15 @@
 </p>
 
 <h2>Submit a Review:</h2>
-<%= form_for([@program, @program.reviews.build]) do |f| %>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_field :body %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.number_field :rating %>
-    </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
- 
+<p><%= link_to "Submit a Review", create_review_programs_path(@program)%></p>
 
-<%= link_to 'Edit', edit_program_path(@program) %> |
-<%= link_to 'Back', programs_path %>
+<h2>Reviews:</h2>
+<% if (@program.reviews).empty? %>
+This program does not yet have any reviews.
+<% else %>
+	<% (@program.reviews).each do |f|%>
+	<%= link_to "Review # #{f.id}", f %>
+	<br />
+	<% end %>
+<% end %>
+

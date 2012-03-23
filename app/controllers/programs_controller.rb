@@ -6,7 +6,7 @@ class ProgramsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @programs }
+      format.json { render :json => @programs }
     end
   end
 
@@ -17,7 +17,7 @@ class ProgramsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @program }
+      format.json { render :json => @program }
     end
   end
 
@@ -28,7 +28,7 @@ class ProgramsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @program }
+      format.json { render :json => @program }
     end
   end
 
@@ -64,7 +64,7 @@ class ProgramsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @program.errors, status: :unprocessable_entity }
+        format.json { render :json => @program.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -80,4 +80,12 @@ class ProgramsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def create_review
+     @program = Program.find(params[:id])
+     @review = Review.create
+     @review.program_id = @program.id
+     @review.user_id = current_user.id
+     redirect_to edit_review_path(@review.id)
+   end
 end

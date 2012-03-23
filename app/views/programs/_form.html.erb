@@ -31,6 +31,10 @@
     <%= f.label :organization_id %><br />
     <%= f.number_field :organization_id %>
   </div>
+
+  <div><%= f.label 'Add a photo' %>
+  <%= f.file_field :photo %></div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
