@@ -1,5 +1,5 @@
 RMTest::Application.routes.draw do
-
+  match 'users.:id' => 'users#show'
   
   match "users/send_message.:id" => 'users#send_message'
 

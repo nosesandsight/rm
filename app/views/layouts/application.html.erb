@@ -17,7 +17,8 @@
 <%= link_to "Sign in", new_user_session_path %> |
 <% else %>
 <%= link_to 'Sign out', destroy_user_session_path, :method => :delete%> |
-<%= link_to "Your Messages", messages_path %> |
+<%= link_to "Messages", messages_path %> <%= current_user.unread_message_count%> |
+<%= link_to "Your Profile Page", users_path(current_user.id)%>
 <% end %>
 
 
