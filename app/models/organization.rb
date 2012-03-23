@@ -9,5 +9,4 @@ def self.search(search)
 		find(:all)
 	end
 end
-
 end
