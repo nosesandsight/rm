@@ -36,8 +36,10 @@
     <td><%= Org_Namer(@program.organization_id) %></td>
 </p>
 
+
 <h2>Submit a Review:</h2>
 <p><%= link_to "Submit a Review", create_review_programs_path(@program)%></p>
+<%= link_to "Add to favorites", %>
 
 <h2>Reviews:</h2>
 <% if (@program.reviews).empty? %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323045814) do
+ActiveRecord::Schema.define(:version => 20120323083542) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20120323045814) do
   end
 
   add_index "comments", ["organization_id"], :name => "index_comments_on_organization_id"
+
+  create_table "favorites", :force => true do |t|
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "program_id"
+    t.string   "program_name"
+    t.integer  "fprogram_id"
+  end
 
   create_table "messages", :force => true do |t|
     t.string   "subject"
@@ -85,6 +93,8 @@ ActiveRecord::Schema.define(:version => 20120323045814) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.string   "username"
+    t.integer  "age"
+    t.string   "country"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
