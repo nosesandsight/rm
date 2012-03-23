@@ -1,7 +1,7 @@
 class Program < ActiveRecord::Base
 belongs_to :organization
 has_many :reviews
-attr_accessible :id
+attr_accessible :id, :photo
 
 # Paperclip
 has_attached_file :photo,
